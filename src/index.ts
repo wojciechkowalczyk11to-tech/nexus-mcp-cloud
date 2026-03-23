@@ -506,7 +506,7 @@ export default {
     const authError = checkAuth(request, env);
     if (authError) return authError;
 
-    // MCP endpoint
-    return NexusMCP.mount("/mcp").fetch(request, env, ctx);
+    // MCP endpoint (Streamable HTTP transport)
+    return NexusMCP.serve("/mcp").fetch(request, env, ctx);
   },
 };

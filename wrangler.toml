@@ -6,6 +6,14 @@ compatibility_flags = ["nodejs_compat"]
 [vars]
 MCP_SERVER_NAME = "nexus-mcp-cloud"
 
+[[durable_objects.bindings]]
+name = "MCP_OBJECT"
+class_name = "NexusMCP"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["NexusMCP"]
+
 # Secrets set via: wrangler secret put SECRET_NAME
 # NEXUS_AUTH_TOKEN, ANTHROPIC_API_KEY, XAI_API_KEY, XAI_API_KEY_2,
 # OPENAI_API_KEY, GEMINI_API_KEY, DEEPSEEK_API_KEY, MISTRAL_API_KEY,
